@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { UserProvider } from "@/contexts/user-context";
 import LandingPage from "@/components/landing-page";
 import AliasPage from "@/components/alias-page";
 import AnniversaryPage from "@/components/anniversary-page";
@@ -28,14 +27,12 @@ export default function Celebration() {
   };
 
   return (
-    <UserProvider>
-      <div className="relative">
-        {stage === "landing" && <LandingPage onComplete={handleLandingComplete} />}
-        {stage === "alias" && <AliasPage onComplete={handleAliasComplete} />}
-        {stage === "anniversary" && <AnniversaryPage onComplete={handleAnniversaryComplete} />}
-        {stage === "birthday" && <BirthdayPage onRestart={handleRestart} />}
-        <MusicControl />
-      </div>
-    </UserProvider>
+    <div className="relative">
+      {stage === "landing" && <LandingPage onComplete={handleLandingComplete} />}
+      {stage === "alias" && <AliasPage onComplete={handleAliasComplete} />}
+      {stage === "anniversary" && <AnniversaryPage onComplete={handleAnniversaryComplete} />}
+      {stage === "birthday" && <BirthdayPage onRestart={handleRestart} />}
+      <MusicControl />
+    </div>
   );
 }
