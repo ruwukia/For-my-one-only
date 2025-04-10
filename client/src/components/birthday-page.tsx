@@ -4,6 +4,8 @@ import { useUser } from "@/contexts/user-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Balloon from "./balloon";
+import BirthdayCake from "./birthday-cake";
+import Confetti from "./confetti";
 
 interface BirthdayPageProps {
   onRestart: () => void;
@@ -12,6 +14,7 @@ interface BirthdayPageProps {
 export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
   const { alias } = useUser();
   const [showConfetti, setShowConfetti] = useState(false);
+  const [cakeBlown, setCakeBlown] = useState(false);
   
   const balloonColors = [
     "text-pink",
@@ -39,9 +42,17 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
       transition: { duration: 0.8 }
     }
   };
+  
+  const handleCakeBlown = () => {
+    setCakeBlown(true);
+    setShowConfetti(true);
+  };
 
   return (
     <section className="min-h-screen flex flex-col items-center bg-anime-gradient relative overflow-hidden px-4 pt-12 pb-20">
+      {/* Celebration confetti effect */}
+      <Confetti show={showConfetti} />
+      
       <div className="z-10 text-center max-w-4xl">
         <motion.h1 
           className="text-4xl md:text-6xl font-quicksand font-bold mb-6"
@@ -60,6 +71,15 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
         >
           April 14th - Your Special Day ✨
         </motion.p>
+        
+        {/* Birthday cake with interactive candles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          <BirthdayCake onBlow={handleCakeBlown} />
+        </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 50 }}
