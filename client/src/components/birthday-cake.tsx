@@ -34,40 +34,45 @@ export default function BirthdayCake({ onBlow }: BirthdayCakeProps) {
         whileHover={{ scale: 1.02 }}
         onClick={handleCakeBlow}
       >
-        {/* Cake base */}
-        <div className="relative w-full h-60 bg-gradient-to-b from-pink-200 to-pink-300 rounded-lg overflow-hidden shadow-xl">
-          {/* Cake layers */}
-          <div className="absolute bottom-0 w-full">
-            <div className="h-10 bg-pink-500 rounded-t-lg"></div>
-            <div className="h-16 bg-pink-400"></div>
-            <div className="h-14 bg-pink-300"></div>
-            <div className="h-12 bg-pink-200"></div>
+        {/* Cake base - designed like the traditional cake emoji 🎂 */}
+        <div className="relative w-full h-64 bg-gradient-to-b from-amber-50 to-amber-100 rounded-lg overflow-hidden shadow-xl">
+          {/* Cake plate */}
+          <div className="absolute bottom-0 w-full h-6 bg-gray-200 rounded-b-lg"></div>
+          
+          {/* Cake layers - matching traditional cake emoji colors */}
+          <div className="absolute bottom-6 w-full">
+            <div className="h-12 bg-amber-600 rounded-t-lg"></div>
+            <div className="h-16 bg-amber-500"></div>
+            <div className="h-14 bg-amber-400"></div>
           </div>
           
-          {/* Cake decorations */}
-          <div className="absolute top-1/2 left-0 w-full flex justify-around">
-            <motion.div 
-              className="w-6 h-6 rounded-full bg-violet-300"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            ></motion.div>
-            <motion.div 
-              className="w-4 h-4 rounded-full bg-teal-300"
-              animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
-            ></motion.div>
-            <motion.div 
-              className="w-5 h-5 rounded-full bg-purple-300"
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 1.8, repeat: Infinity, delay: 0.5 }}
-            ></motion.div>
+          {/* Cake frosting top */}
+          <div className="absolute bottom-48 w-full">
+            <div className="h-12 bg-pink-300 rounded-t-lg"></div>
+          </div>
+          
+          {/* Frosting decorations */}
+          <div className="absolute bottom-54 left-10 w-6 h-6 rounded-full bg-pink-200"></div>
+          <div className="absolute bottom-53 left-28 w-5 h-5 rounded-full bg-pink-200"></div>
+          <div className="absolute bottom-54 right-10 w-6 h-6 rounded-full bg-pink-200"></div>
+          <div className="absolute bottom-53 right-24 w-5 h-5 rounded-full bg-pink-200"></div>
+          <div className="absolute bottom-54 left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-pink-200"></div>
+          
+          {/* Cherry decorations */}
+          <div className="absolute bottom-62 left-12 w-6 h-6 rounded-full bg-red-500"></div>
+          <div className="absolute bottom-62 right-12 w-6 h-6 rounded-full bg-red-500"></div>
+          <div className="absolute bottom-62 left-1/2 transform -translate-x-1/2 w-7 h-7 rounded-full bg-red-500"></div>
+          
+          {/* Happy Birthday text on cake */}
+          <div className="absolute bottom-36 w-full text-center">
+            <span className="text-sm font-bold text-pink-800 px-2 py-1 bg-pink-100/70 rounded-md">Happy Birthday!</span>
           </div>
           
           {/* Candles */}
-          <div className="absolute top-0 left-0 w-full flex justify-center space-x-4 pt-5">
+          <div className="absolute top-2 left-0 w-full flex justify-center space-x-4">
             {Array.from({ length: 5 }).map((_, i) => (
               <div key={i} className="relative">
-                <div className="w-2 h-16 bg-gradient-to-b from-blue-300 to-pink-300 rounded-full"></div>
+                <div className="w-2 h-14 bg-gradient-to-b from-blue-400 to-blue-500 rounded-sm"></div>
                 
                 {/* Candle flame */}
                 {candlesLit && (

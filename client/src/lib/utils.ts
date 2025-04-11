@@ -20,16 +20,19 @@ export function randomSize(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
 
-// Function to generate random anime quotes
+// Function to generate random heartfelt quotes
 export const getRandomQuote = (): string => {
   const quotes = [
-    "Like the cherry blossoms that fall each spring, each moment with you is beautiful and precious.",
-    "Our story isn't an anime, but it's filled with just as much adventure, growth and love.",
-    "You are my real-life anime hero. I love you more than words can express.",
-    "In this vast universe, finding someone who understands your soul is the greatest adventure.",
-    "Like Tanjiro's determination, your love gives me strength every day.",
-    "If our life was an anime, I'd watch every season over and over again.",
-    "Your love has been my strength, just as Mikasa's devotion to Eren."
+    "Each moment with you is beautiful and precious, a memory to cherish forever.",
+    "Our story is filled with adventure, growth, and endless love.",
+    "You are my hero. I love you more than words can express.",
+    "In this vast universe, finding someone who understands your soul is the greatest treasure.",
+    "Your love gives me strength and purpose every day.",
+    "I would choose our love story over and over again, through every chapter of our lives.",
+    "Your love has transformed me into the best version of myself.",
+    "Every day with you feels like the greatest gift I could ever receive.",
+    "You are the reason I believe in forever.",
+    "Your smile is the highlight of my day, every single day."
   ];
   
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -47,7 +50,15 @@ export const getBalloonMessage = (): string => {
     "My ShinXou!",
     "Best boyfriend!",
     "Heart stolen!",
-    "Anime lovers forever!"
+    "Always & Forever!",
+    "My everything!",
+    "Two years strong!",
+    "Cherish you!",
+    "My happiness!",
+    "Love grows deeper!",
+    "My sunshine!",
+    "Soulmates!",
+    "My world!"
   ];
   
   return messages[Math.floor(Math.random() * messages.length)];

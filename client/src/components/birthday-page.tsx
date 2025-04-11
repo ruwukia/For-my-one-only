@@ -101,9 +101,9 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
               <div className="space-y-6 text-left">
                 <p>Dearest {alias},</p>
                 <p>Not only is it our anniversary, but today we celebrate the day you came into this world! How lucky am I to have these special days so close together?</p>
-                <p>Like Tanjiro's determination or Ichigo's resilience, you face each day with courage and kindness. Your passion for the things you love, whether it's anime or our relationship, inspires me.</p>
-                <p>As you blow out your candles, know that I'm wishing for countless more years of adventures together, both in this world and through the stories we share.</p>
-                <p className="text-light-pink font-bold text-center text-xl">"You are my real-life anime hero. I love you more than words can express."</p>
+                <p>You face each day with such courage and kindness. Your passion for the things you love and our relationship inspires me to be a better person. I cherish every moment we spend together.</p>
+                <p>As you blow out your candles, know that I'm wishing for countless more years of adventures together. I promise to be by your side, loving you, supporting you, and treasuring our journey together.</p>
+                <p className="text-light-pink font-bold text-center text-xl">"You are the best thing that's ever happened to me. I love you more than words can express."</p>
                 <p>With all my heart,<br/>Your Shin0ah</p>
               </div>
             </CardContent>
@@ -134,7 +134,7 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
         >
           <Card className="bg-black/30 backdrop-blur-md shadow-xl border-violet">
             <CardContent className="p-6">
-              <h2 className="text-2xl font-quicksand font-bold mb-4">Our Anime-Inspired Journey</h2>
+              <h2 className="text-2xl font-quicksand font-bold mb-4">Our Beautiful Journey Together</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div variants={itemVariants}>
                   <div className="w-full h-48 rounded bg-gradient-to-br from-dark-blue to-violet mb-4 flex items-center justify-center overflow-hidden">
@@ -153,7 +153,7 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
                       </svg>
                     </motion.div>
                   </div>
-                  <p>"Like the cherry blossoms that fall each spring, each moment with you is beautiful and precious."</p>
+                  <p>"Each moment with you is a treasure I hold close to my heart. I'll cherish our memories for a lifetime."</p>
                 </motion.div>
                 <motion.div variants={itemVariants}>
                   <div className="w-full h-48 rounded bg-gradient-to-br from-violet to-pink mb-4 flex items-center justify-center overflow-hidden">
@@ -172,7 +172,7 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
                       </svg>
                     </motion.div>
                   </div>
-                  <p>"Our story isn't an anime, but it's filled with just as much adventure, growth and love."</p>
+                  <p>"Your love has transformed my life in ways I never thought possible. You are the best thing that's ever happened to me."</p>
                 </motion.div>
               </div>
               
