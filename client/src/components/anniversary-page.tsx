@@ -106,7 +106,7 @@ export default function AnniversaryPage({ onComplete }: AnniversaryPageProps) {
                     <li>Your love makes me feel like the luckiest person alive</li>
                   </ul>
                   <p>Every moment with you feels like the best anime storyline - except it's real! I truly cherish every moment we spend together, and I'm so grateful to have you in my life. You are the main character in my heart. And I wouldn't trade this storyline for any other.</p>
-                  <p className="text-right font-medium pt-4">Forever yours,<br/>Shin0ah ❤️</p>
+                  <p className="text-right font-medium pt-4 pb-10">Forever yours,<br/>Shin0ah ❤️</p>
                 </div>
               </CardContent>
               
