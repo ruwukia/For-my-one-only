@@ -11,27 +11,36 @@ export default function MusicControl() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Create audio element with a romantic/celebration song
-    const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/01/27/audio_11fb7ea919.mp3?filename=beautiful-piano-115480.mp3');
+    // Set up an embedded audio element that we can control
+    const audio = document.createElement('audio');
+    audio.src = 'https://cdn.pixabay.com/download/audio/2022/01/27/audio_11fb7ea919.mp3?filename=beautiful-piano-115480.mp3';
+    audio.id = 'background-music';
     audio.loop = true;
     audio.volume = 0.4;
+    audio.preload = 'auto';
+    document.body.appendChild(audio);
     audioRef.current = audio;
     
     // Set up event listeners
     audio.oncanplaythrough = () => {
       setMusicLoaded(true);
       console.log("Music loaded and ready to play");
-    };
-    
-    // Auto-play attempt when loaded (may be blocked by browser)
-    audio.onloadeddata = () => {
-      console.log("Music data loaded");
       
-      // Show the tooltip after a short delay to draw attention to the music control
-      setTimeout(() => {
-        setShowTooltip(true);
-        setTimeout(() => setShowTooltip(false), 5000); // Hide after 5 seconds
-      }, 3000);
+      // Attempt to autoplay
+      audio.play()
+        .then(() => {
+          console.log("Autoplay successful");
+          setIsMusicPlaying(true);
+        })
+        .catch(e => {
+          console.log("Autoplay prevented, user interaction needed:", e);
+          
+          // Show the tooltip to inform user music is available
+          setTimeout(() => {
+            setShowTooltip(true);
+            setTimeout(() => setShowTooltip(false), 5000); // Hide after 5 seconds
+          }, 2000);
+        });
     };
     
     // Handle errors
@@ -43,7 +52,15 @@ export default function MusicControl() {
     try {
       const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
       if (AudioContext) {
-        new AudioContext();
+        const context = new AudioContext();
+        
+        // Resume AudioContext on first user interaction
+        document.addEventListener('click', function resumeAudio() {
+          context.resume().then(() => {
+            console.log('AudioContext resumed successfully');
+            document.removeEventListener('click', resumeAudio);
+          });
+        }, { once: true });
       }
     } catch (e) {
       console.log("AudioContext initialization failed:", e);
@@ -53,7 +70,7 @@ export default function MusicControl() {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.src = "";
+        audioRef.current.remove();
         audioRef.current = null;
       }
     };

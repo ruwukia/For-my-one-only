@@ -8,7 +8,7 @@ interface BirthdayCakeProps {
 export default function BirthdayCake({ onBlow }: BirthdayCakeProps) {
   const [candlesLit, setCandlesLit] = useState(true);
   const [blowAnimation, setBlowAnimation] = useState(false);
-  const [showCat, setShowCat] = useState(false);
+  const [showHearts, setShowHearts] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [cakeCut, setCakeCut] = useState(false);
   const [showBirthdayWish, setShowBirthdayWish] = useState(false);
@@ -20,7 +20,7 @@ export default function BirthdayCake({ onBlow }: BirthdayCakeProps) {
     
     setTimeout(() => {
       setCandlesLit(false);
-      setShowCat(true);
+      setShowHearts(true);
       
       setTimeout(() => {
         setShowMessage(true);
@@ -201,17 +201,36 @@ export default function BirthdayCake({ onBlow }: BirthdayCakeProps) {
             )}
           </AnimatePresence>
           
-          {/* Cat animation */}
+          {/* Floating hearts animation */}
           <AnimatePresence>
-            {showCat && (
-              <motion.div 
-                className="absolute top-1/4 right-1/4"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="text-5xl">🐱</div>
-              </motion.div>
+            {showHearts && (
+              <>
+                {[...Array(5)].map((_, i) => (
+                  <motion.div 
+                    key={i}
+                    className={`absolute text-${i % 2 === 0 ? 'pink' : 'red'}-500`}
+                    initial={{ 
+                      opacity: 0, 
+                      scale: 0.5,
+                      top: '50%',
+                      left: `${30 + i * 10}%`
+                    }}
+                    animate={{ 
+                      opacity: [0, 1, 0],
+                      scale: [0.5, 1.2, 0.8],
+                      top: ['50%', '20%'],
+                      left: `${30 + i * 10 + (i % 2 === 0 ? 5 : -5)}%`
+                    }}
+                    transition={{ 
+                      duration: 2 + (i * 0.3),
+                      times: [0, 0.4, 1],
+                      ease: "easeOut"
+                    }}
+                  >
+                    <div className="text-3xl">❤️</div>
+                  </motion.div>
+                ))}
+              </>
             )}
           </AnimatePresence>
         </div>
