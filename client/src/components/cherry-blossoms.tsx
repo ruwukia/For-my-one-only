@@ -34,16 +34,20 @@ export default function CherryBlossoms({
     
     const count = blossomCounts[density];
     
+    // Keep track of the latest ID to ensure uniqueness
+    let nextId = 0;
+    
     // Create initial set of blossoms
-    const initialBlossoms = Array.from({ length: count }, (_, i) => createBlossom(i));
+    const initialBlossoms = Array.from({ length: count }, () => {
+      return createBlossom(nextId++);
+    });
     setBlossoms(initialBlossoms);
     
     // Set up interval to add new blossoms periodically
     const interval = setInterval(() => {
       setBlossoms(prev => {
-        const newIndex = prev.length;
         // Keep array size under control by removing old blossoms
-        return [...prev.slice(-(count - 2)), createBlossom(newIndex)];
+        return [...prev.slice(-(count - 2)), createBlossom(nextId++)];
       });
     }, density === 'high' ? 600 : density === 'medium' ? 1000 : 1500);
     

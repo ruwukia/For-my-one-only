@@ -3,7 +3,7 @@
   publish = "dist/public"
 
 [build.environment]
-  NODE_VERSION = "16"
+  NODE_VERSION = "18"
 
 [functions]
   directory = "dist"
