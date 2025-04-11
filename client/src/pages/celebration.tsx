@@ -3,7 +3,6 @@ import LandingPage from "@/components/landing-page";
 import AliasPage from "@/components/alias-page";
 import AnniversaryPage from "@/components/anniversary-page";
 import BirthdayPage from "@/components/birthday-page";
-import MusicControl from "@/components/music-control";
 
 type CelebrationStage = "landing" | "alias" | "anniversary" | "birthday";
 
@@ -32,7 +31,6 @@ export default function Celebration() {
       {stage === "alias" && <AliasPage onComplete={handleAliasComplete} />}
       {stage === "anniversary" && <AnniversaryPage onComplete={handleAnniversaryComplete} />}
       {stage === "birthday" && <BirthdayPage onRestart={handleRestart} />}
-      <MusicControl />
     </div>
   );
 }

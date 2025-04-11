@@ -194,7 +194,7 @@ export default function BirthdayCake({ onBlow }: BirthdayCakeProps) {
                     exit={{ scale: 2, opacity: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    💨
+                    ✨
                   </motion.div>
                 </div>
               </motion.div>
