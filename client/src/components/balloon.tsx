@@ -52,12 +52,12 @@ export default function Balloon({ color, delay }: BalloonProps) {
       
       {isPopped && (
         <motion.div
-          className="absolute inset-0 flex items-center justify-center z-10"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className="absolute top-[-30px] left-1/2 z-20 transform -translate-x-1/2"
+          initial={{ opacity: 0, scale: 0.5, y: 0 }}
+          animate={{ opacity: 1, scale: 1, y: -10 }}
           exit={{ opacity: 0 }}
         >
-          <span className="text-sm font-bold text-white bg-pink/70 px-3 py-1 rounded-full whitespace-nowrap">
+          <span className="block text-sm font-bold text-white bg-pink/80 px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg">
             {message}
           </span>
         </motion.div>

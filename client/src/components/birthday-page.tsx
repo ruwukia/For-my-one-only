@@ -166,9 +166,11 @@ export default function BirthdayPage({ onRestart }: BirthdayPageProps) {
           transition={{ delay: 1.5, duration: 1 }}
         >
           <p className="text-lg mb-4 bg-violet-800/30 backdrop-blur-sm px-4 py-2 rounded-full inline-block">Click the balloons for a surprise!</p>
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-8 flex-wrap py-6 px-4">
             {balloonColors.map((color, index) => (
-              <Balloon key={index} color={color} delay={index * 0.5} />
+              <div key={index} className="mx-2 my-2">
+                <Balloon color={color} delay={index * 0.5} />
+              </div>
             ))}
           </div>
         </motion.div>
