@@ -72,39 +72,139 @@ export default function AnniversaryPage({ onComplete }: AnniversaryPageProps) {
         >
           {/* Left column: Anniversary message */}
           <motion.div variants={itemVariants}>
-            <Card className="bg-black/30 backdrop-blur-md shadow-xl h-full border-violet">
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-quicksand font-bold mb-4 text-light-pink">Two Years of Us</h2>
-                <div className="space-y-4 text-left">
-                  <p>My dearest {alias},</p>
-                  <p>Two years ago, our story began, and what a beautiful journey it has been. Like characters in our favorite anime, we've faced challenges, shared laughter, and grown together.</p>
-                  <p>Your love has been my strength, just as Mikasa's devotion to Eren. Your wisdom reminds me of the best qualities we see in our anime heroes - honor, loyalty, and unconditional love.</p>
-                  <p>You transformed me into a fellow weeb, and I couldn't be happier to share this world with you. From Attack on Titan to Demon Slayer, we've explored countless worlds together.</p>
-                  <p className="text-light-pink font-bold">I cherish every moment we spend together, and I'm so grateful to have you in my life.</p>
-                  <p>Forever yours,<br/>Shin0ah</p>
+            <Card className="bg-cover bg-center relative h-full overflow-hidden border-none shadow-2xl" 
+                  style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/rice-paper.png')" }}>
+              <div className="absolute inset-0 bg-gradient-to-b from-pink-50/90 to-pink-100/90 backdrop-blur-sm"></div>
+              
+              {/* Scroll top decoration */}
+              <div className="absolute top-0 left-0 w-full h-8 bg-violet-800/90 rounded-t-lg flex items-center justify-center">
+                <div className="w-full h-2 bg-gradient-to-r from-pink-300 via-pink-500 to-pink-300 mx-6 rounded-full"></div>
+              </div>
+              
+              {/* Cherry blossom decorations */}
+              <div className="absolute top-2 left-2">
+                <span className="text-2xl">🌸</span>
+              </div>
+              <div className="absolute top-2 right-2">
+                <span className="text-2xl">🌸</span>
+              </div>
+              
+              {/* Content with scroll styling */}
+              <CardContent className="p-6 pt-12 relative z-10">
+                <h2 className="text-2xl font-quicksand font-bold mb-4 text-violet-800 text-center border-b-2 border-pink-300 pb-2">
+                  My Love Letter to You
+                </h2>
+                <div className="space-y-4 text-left text-violet-900 px-2">
+                  <p className="font-medium">To my amazing boyfriend,</p>
+                  <p>Two years ago, I couldn't have imagined how much my life would change when you came into it. You've filled my days with joy, laughter, and so much love. You've made me a better person, and for that, I am eternally grateful.</p>
+                  <p>You've embraced my weeb side and even joined me in this wonderful world of anime. Watching you get excited about new episodes and discussing theories with you has been one of my greatest joys.</p>
+                  <p>You've been my Levi when I needed strength, my Tanjiro when I needed kindness, and my Ichigo when I needed protection.</p>
+                  <p>Thank you for being the best boyfriend I could ever wish for. As we celebrate both our anniversary and your birthday, I want you to know:</p>
+                  <ul className="list-disc pl-6 space-y-1 marker:text-pink-500">
+                    <li>Your smile brightens even my darkest days</li>
+                    <li>Your kindness inspires me to be better</li>
+                    <li>Your love makes me feel like the luckiest person alive</li>
+                  </ul>
+                  <p>Every moment with you feels like the best anime storyline - except it's real! I truly cherish every moment we spend together, and I'm so grateful to have you in my life. You are the main character in my heart. And I wouldn't trade this storyline for any other.</p>
+                  <p className="text-right font-medium pt-4">Forever yours,<br/>Shin0ah ❤️</p>
                 </div>
               </CardContent>
+              
+              {/* Scroll bottom decoration */}
+              <div className="absolute bottom-0 left-0 w-full h-8 bg-violet-800/90 rounded-b-lg flex items-center justify-center">
+                <div className="w-full h-2 bg-gradient-to-r from-pink-300 via-pink-500 to-pink-300 mx-6 rounded-full"></div>
+              </div>
             </Card>
           </motion.div>
           
-          {/* Right column: Image and quote */}
+          {/* Right column: Anime-style elements */}
           <motion.div variants={containerVariants} className="flex flex-col space-y-6">
             <motion.div variants={itemVariants}>
-              <Card className="bg-black/30 backdrop-blur-md shadow-xl overflow-hidden border-violet">
-                <CardContent className="p-4">
-                  <div className="w-full h-64 rounded bg-gradient-to-br from-dark-blue to-violet flex items-center justify-center">
-                    <svg className="w-32 h-32 text-soft-pink" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                    </svg>
+              <Card className="relative bg-cover bg-center shadow-xl overflow-hidden border-none"
+                    style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/rice-paper-light.png')" }}>
+                {/* Gradient background with anime feel */}
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-400/80 to-violet-800/80"></div>
+                
+                {/* Decorative corners - anime scroll style */}
+                <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-pink-300/80"></div>
+                <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-pink-300/80"></div>
+                <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-pink-300/80"></div>
+                <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-pink-300/80"></div>
+                
+                <CardContent className="p-4 relative z-10">
+                  <div className="w-full h-64 rounded flex flex-col items-center justify-center">
+                    <motion.div
+                      initial={{ scale: 0.8 }}
+                      animate={{ 
+                        scale: [0.8, 1, 0.8],
+                        rotate: [0, 5, 0, -5, 0]
+                      }}
+                      transition={{ 
+                        duration: 10,
+                        repeat: Infinity,
+                        repeatType: "loop" 
+                      }}
+                    >
+                      <svg className="w-32 h-32 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                      </svg>
+                    </motion.div>
+                    
+                    {/* Decorative floating particles - like anime sparkles */}
+                    <div className="absolute top-1/4 left-1/4">
+                      <motion.div
+                        animate={{ 
+                          y: [0, -10, 0],
+                          opacity: [0.4, 1, 0.4]
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity
+                        }}
+                        className="text-lg"
+                      >
+                        ✨
+                      </motion.div>
+                    </div>
+                    <div className="absolute bottom-1/4 right-1/4">
+                      <motion.div
+                        animate={{ 
+                          y: [0, -10, 0],
+                          opacity: [0.4, 1, 0.4]
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          delay: 0.5,
+                          repeat: Infinity
+                        }}
+                        className="text-lg"
+                      >
+                        ✨
+                      </motion.div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
             
             <motion.div variants={itemVariants}>
-              <Card className="bg-black/30 backdrop-blur-md shadow-xl border-violet">
-                <CardContent className="p-6">
-                  <p className="italic text-soft-pink">"In this vast universe, finding someone who understands your soul is the greatest adventure. Thank you for being the best boyfriend, for understanding me, and for making every day feel like the best episode of our own anime series."</p>
+              <Card className="relative bg-cover bg-center shadow-xl border-none"
+                    style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/rice-paper-light.png')" }}>
+                <div className="absolute inset-0 bg-gradient-to-b from-violet-100/90 to-pink-100/90 backdrop-blur-sm"></div>
+                
+                {/* Anime-style quote with decorative elements */}
+                <CardContent className="p-6 relative z-10">
+                  <div className="relative">
+                    {/* Decorative quote marks */}
+                    <span className="absolute -top-3 -left-1 text-3xl text-pink-400">"</span>
+                    <p className="italic text-violet-800 font-medium text-center px-4 py-2">
+                      In this vast universe, finding someone who understands your soul is the greatest adventure. Thank you for being the best boyfriend, for understanding me, and for making every day feel like the best episode of our own anime series.
+                    </p>
+                    <span className="absolute -bottom-4 -right-1 text-3xl text-pink-400">"</span>
+                    
+                    {/* Small cherry blossom decorations */}
+                    <div className="absolute -bottom-2 left-1/3 text-sm">🌸</div>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
